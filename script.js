@@ -104,8 +104,8 @@ window.onload = function(){
     
     	download(filename, text);
     	
-
     	document.getElementById("writingPad").focus();
+    	
 	}, false);
 
 }
