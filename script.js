@@ -27,6 +27,22 @@ function consumeDisruptiveKeyEvents(event){
 	}
 }
 
+function setCaretPosition(ctrl, pos) {
+  // Modern browsers
+  if (ctrl.setSelectionRange) {
+   		ctrl.focus();
+    	ctrl.setSelectionRange(pos, pos);
+  
+  // IE8 and below
+  } else if (ctrl.createTextRange) {
+    	var range = ctrl.createTextRange();
+    	range.collapse(true);
+    	range.moveEnd('character', pos);
+    	range.moveStart('character', pos);
+    	range.select();
+  }
+}
+
 
 function countWords() {
 	var s = document.getElementById("writingPad").innerText;
@@ -60,7 +76,20 @@ function download(filename, text) {
     document.body.removeChild(element);
 }
 
+function GoInFullscreen(element) {
+	if(element.requestFullscreen)
+		element.requestFullscreen();
+	else if(element.mozRequestFullScreen)
+		element.mozRequestFullScreen();
+	else if(element.webkitRequestFullscreen)
+		element.webkitRequestFullscreen();
+	else if(element.msRequestFullscreen)
+		element.msRequestFullscreen();
+}
+
 window.onload = function(){
+
+	var mouseDown = false;
 
 
 	countWords();
@@ -90,10 +119,29 @@ window.onload = function(){
 	document.getElementById("writingPad").addEventListener('mousedown', function(event){
 
 
-		event.preventDefault();
+		mouseDown = true;
+	
+	});
 
-		document.getElementById("writingPad").focus();
+	document.getElementById("writingPad").addEventListener('mouseup', function(event){
 
+		mouseDown = false;
+
+	});
+
+
+
+
+	document.getElementById("writingPad").addEventListener('mousemove', function(event){
+
+		if(mouseDown){
+
+			console.log("mouse dragged");
+
+			event.preventDefault();
+			window.getSelection().removeAllRanges();
+
+		}
 		
 	});
 
