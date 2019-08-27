@@ -9,17 +9,27 @@
 
 	<body>
 
-		<div id="wordCount">
+		
+		<div class="dropdown">
+			<input type="button" class="dropbtn" value="Menu">
+  			
+  				<div class="dropdown-content">
+    				<a href="#" id="save">Save</a>
+    				<a href="#" id="fullscreen">Fullscreen</a>
+    				<a href="#" id="change-color-mode">Light Mode</a>
+  				</div>
+		</div>
+
+		<div id="word-count">
 			<p>0 words</p>
 		</div>
-
-		<input type="button" id="save" value="Save">
-
-		<div class="writingArea">
-			<header contenteditable="true" spellcheck="false"id="title">Title(click to edit)</header>
-			<section contenteditable="true" spellcheck="false"id="writingPad" class="unselectable"></section>
+		
+		<div class="writing-area">
+			<header contenteditable="true" spellcheck="false"id="title">Title(Click to edit)</header>
+			<section contenteditable="true" spellcheck="false"id="writing-pad" class="unselectable"></section>
 		</div>
 
+		
 
 
 	<script type="text/javascript" src="script.js"></script>

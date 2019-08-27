@@ -3,7 +3,7 @@ function setFocusToSection(event){
 	if(event.keyCode === 13){
 		event.preventDefault();
 
-		document.getElementById("writingPad").focus();
+		document.getElementById("writing-pad").focus();
 		
 	}
 }
@@ -27,26 +27,9 @@ function consumeDisruptiveKeyEvents(event){
 	}
 }
 
-function setCaretPosition(ctrl, pos) {
-  // Modern browsers
-  if (ctrl.setSelectionRange) {
-   		ctrl.focus();
-    	ctrl.setSelectionRange(pos, pos);
-  
-  // IE8 and below
-  } else if (ctrl.createTextRange) {
-    	var range = ctrl.createTextRange();
-    	range.collapse(true);
-    	range.moveEnd('character', pos);
-    	range.moveStart('character', pos);
-    	range.select();
-  }
-}
-
-
 function countWords() {
-	var s = document.getElementById("writingPad").innerText;
-	var wordCountP = document.getElementById("wordCount");
+	var s = document.getElementById("writing-pad").innerText;
+	var wordCountP = document.getElementById("word-count");
 
 	var noOfWords = s.trim().split(/\s+/).length;
 
@@ -90,49 +73,56 @@ function GoInFullscreen(element) {
 window.onload = function(){
 
 	var mouseDown = false;
+	var lightMode = false;
+
+	var writingPad = document.getElementById("writing-pad");
+	var title = document.getElementById("title");
+	var saveLink = document.getElementById("save");
+	var fullscreenLink = document.getElementById("fullscreen");
+	var changeColorModeLink = document.getElementById("change-color-mode");
+
+
 
 
 	countWords();
 
-	document.getElementById("writingPad").focus();
+	writingPad.focus();
 
-	document.getElementById("title").addEventListener('keydown', function(event){
+	title.addEventListener('keydown', function(event){
 
 		setFocusToSection(event);
 
 	});
 
-	document.getElementById("writingPad").addEventListener('keydown',function(event){
+	writingPad.addEventListener('keydown',function(event){
 
 		countWords();
 		consumeDisruptiveKeyEvents(event);
 
 	});
 
-	document.getElementById("writingPad").addEventListener('contextmenu', function(event){
+	writingPad.addEventListener('contextmenu', function(event){
 
 		event.preventDefault();
 
 	});
 
 
-	document.getElementById("writingPad").addEventListener('mousedown', function(event){
+	writingPad.addEventListener('mousedown', function(event){
 
 
 		mouseDown = true;
 	
 	});
 
-	document.getElementById("writingPad").addEventListener('mouseup', function(event){
+	writingPad.addEventListener('mouseup', function(event){
 
 		mouseDown = false;
 
 	});
 
 
-
-
-	document.getElementById("writingPad").addEventListener('mousemove', function(event){
+	writingPad.addEventListener('mousemove', function(event){
 
 		if(mouseDown){
 
@@ -145,16 +135,46 @@ window.onload = function(){
 		
 	});
 
-	document.getElementById("save").addEventListener("click", function(){
+	
+	saveLink.addEventListener("click", function(event){
     
-    	var text = document.getElementById("writingPad").innerText;
+    	var text = document.getElementById("writing-pad").innerText;
     	var filename = document.getElementById("title").innerText;
     
     	download(filename, text);
     	
-    	document.getElementById("writingPad").focus();
+    	document.getElementById("writing-pad").focus();
     	
 	}, false);
+
+	fullscreen.addEventListener("click", function(event){
+
+		GoInFullscreen(document.documentElement);
+
+	},false);
+
+	changeColorModeLink.addEventListener("click", function(event){
+
+
+		if(!lightMode){
+			lightMode = true;
+			changeColorModeLink.innerHTML = "Dark Mode";
+			document.body.style.background = "white";
+			document.body.style.color = "black";
+
+
+
+
+		}
+		else{
+			lightMode = false;
+			changeColorModeLink.innerHTML = "Light Mode";
+			document.body.style.background = "black";
+			document.body.style.color = "white";
+
+		}
+
+	},false);
 
 }
 
