@@ -127,8 +127,6 @@ window.onload = function(){
 		if(mouseDown){
 
 			console.log("mouse dragged");
-
-			event.preventDefault();
 			window.getSelection().removeAllRanges();
 
 		}
