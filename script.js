@@ -160,9 +160,6 @@ window.onload = function(){
 			document.body.style.background = "white";
 			document.body.style.color = "black";
 
-
-
-
 		}
 		else{
 			lightMode = false;
