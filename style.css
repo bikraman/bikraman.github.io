@@ -1,6 +1,6 @@
-@import url('https://fonts.googleapis.com/css?family=Playfair+Display:400,700i&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Prata&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Roboto+Slab&display=swap');
 
 body{
 
@@ -24,9 +24,9 @@ header{
 	position: static;
     margin: 20px 200px 30px 200px;
 	outline: none;
-	font-family: 'Playfair Display', serif;
+	font-family: 'Roboto Slab', serif;
 	font-size: 40px;
-	font-weight: bold;
+	
 }
 
 section{
@@ -59,7 +59,8 @@ section{
   font-family: 'Montserrat', sans-serif;
   font-size: 14px;
   border-radius: 16px;
-  border-color: white;
+  border-color: white solid;
+
 }
 
 /* The container <div> - needed to position the dropdown content */

@@ -81,6 +81,9 @@ window.onload = function(){
 	var fullscreenLink = document.getElementById("fullscreen");
 	var changeColorModeLink = document.getElementById("change-color-mode");
 
+	var dropdownButton = document.getElementById("dropdown-button");
+
+
 
 
 
@@ -160,12 +163,21 @@ window.onload = function(){
 			document.body.style.background = "white";
 			document.body.style.color = "black";
 
+			dropdownButton.style.backgroundColor = "white";
+			dropdownButton.style.color = "black";
+
+
 		}
 		else{
 			lightMode = false;
 			changeColorModeLink.innerHTML = "Light Mode";
 			document.body.style.background = "black";
 			document.body.style.color = "white";
+
+			dropdownButton.style.backgroundColor = "black";
+			dropdownButton.style.color = "white";
+
+
 
 		}
 
