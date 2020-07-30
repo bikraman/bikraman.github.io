@@ -1,24 +1,38 @@
 <!DOCTYPE html>
 <html>
-<head>
-	<title>A Song A Day</title>
 
-	<script type="text/javascript">
+	<head>
+		<title> Bad Writer </title>
+		<link rel="stylesheet" type="text/css" href="style.css">
 		
-		var d = new Date();
+	</head>
 
-		function function_name(argument) {
-			// body...
-		}
+	<body>
+
+		
+		<div class="dropdown">
+			<input type="button" id="dropdown-button" class="dropbtn" value="Menu">
+  			
+  				<div class="dropdown-content">
+    				<a href="#" id="save">Save</a>
+    				<a href="#" id="fullscreen">Fullscreen</a>
+    				<a href="#" id="change-color-mode">Light Mode</a>
+  				</div>
+		</div>
+
+		<div id="word-count">
+			<p>0 words</p>
+		</div>
+		
+		<div class="writing-area">
+			<header contenteditable="true" spellcheck="false"id="title">Bad Writer(Click to edit)</header>
+			<section contenteditable="true" spellcheck="false"id="writing-pad" class="unselectable"></section>
+		</div>
+
+		
 
 
-	</script>
-</head>
+	<script type="text/javascript" src="script.js"></script>
+	</body>
 
-<body>
-
-	<h1>Song for today</h1>
-	<iframe width="560" height="315" src="https://www.youtube.com/embed/RB-RcX5DS5A" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
-</body>
 </html>
