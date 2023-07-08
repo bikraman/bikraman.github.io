@@ -1,38 +1,29 @@
 <!DOCTYPE html>
-<html>
 
-	<head>
-		<title> Bad Writer </title>
-		<link rel="stylesheet" type="text/css" href="style.css">
-		
-	</head>
+<head>
+    <title>beniezsche</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caprasimo&display=swap" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Montserrat:ital,wght@1,200&display=swap" rel="stylesheet"> 
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
 
-	<body>
+<body>
+    <video id="bgVideo" src="media/videos/video5.mp4" autoplay muted loop>
+        <p>
+          Your browser doesn't support HTML video. Here is a
+          <a href="rabbit320.webm">link to the video</a> instead.
+        </p>
+        
+    </video>
 
-		
-		<div class="dropdown">
-			<input type="button" id="dropdown-button" class="dropbtn" value="Menu">
-  			
-  				<div class="dropdown-content">
-    				<a href="#" id="save">Save</a>
-    				<a href="#" id="fullscreen">Fullscreen</a>
-    				<a href="#" id="change-color-mode">Light Mode</a>
-  				</div>
-		</div>
-
-		<div id="word-count">
-			<p>0 words</p>
-		</div>
-		
-		<div class="writing-area">
-			<header contenteditable="true" spellcheck="false"id="title">Bad Writer(Click to edit)</header>
-			<section contenteditable="true" spellcheck="false"id="writing-pad" class="unselectable"></section>
-		</div>
-
-		
-
-
-	<script type="text/javascript" src="script.js"></script>
-	</body>
+    <div class="content"> 
+        <p id="heading">Bikraman Karmakar</p>
+        <p id="about">> Press Enter</p>
+        <script src="script.js"></script> 
+    </div>
+</body>
 
 </html>
