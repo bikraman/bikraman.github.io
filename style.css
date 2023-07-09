@@ -1,14 +1,30 @@
-/* #html {
+/* html {
     display: block;
     background-color: black;
 } */
 
+body {
+    display: flex;
+    justify-content: left;
+    padding: 50px;
+    background-color: black;
+    flex-direction: column;
+}
+
 #heading {
-    /* position: absolute;
-    z-index: 1; */
-    margin-top: 22.5%;
-    color: #222222;
-    font-size: 600%;
+    color: #f0f0f0;
+    margin-top: 15%;
+    font-size: 80px;
+    font-family: 'Press Start 2P', cursive;
+}
+
+li {
+    padding: 10px;
+}
+
+.about {
+    color: #e4e4e4;
+    font-size: 20px;
     font-family: 'Press Start 2P', cursive;
 }
 
@@ -18,19 +34,6 @@
     z-index: 1;
 }
 
-#about {
-    position: absolute;
-    color: #222222;
-    font-size: 20px;
-    margin-top: 35%;
-    font-family: 'Press Start 2P', cursive;
-}
-
-body {
-    display: flex;
-    justify-content: center;
-    overflow: hidden; /* Hide scrollbar */
-}
 
 #bgVideo {
     position: absolute;

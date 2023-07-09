@@ -5,3 +5,12 @@
 
 // backgroundVideo.width = documentWidth;
 // backgroundVideo.height = documentHeight;
+
+document.addEventListener('keydown', (event) => {
+    console.log(event.code);
+
+    const keyCode = event.code;
+    if(keyCode === 'Enter') {
+        
+    }
+});
