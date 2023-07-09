@@ -13,7 +13,7 @@ body {
 
 #heading {
     color: #f0f0f0;
-    margin-top: 15%;
+    margin-top: 5%;
     font-size: 80px;
     font-family: 'Press Start 2P', cursive;
 }
@@ -22,9 +22,15 @@ li {
     padding: 10px;
 }
 
+.subheading {
+    color: #e4e4e4;
+    font-size: 24px;
+    font-family: 'Press Start 2P', cursive;
+}
+
 .about {
     color: #e4e4e4;
-    font-size: 20px;
+    font-size: 16px;
     font-family: 'Press Start 2P', cursive;
 }
 
